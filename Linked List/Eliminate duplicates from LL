@@ -1,0 +1,55 @@
+//  Eliminate duplicates from LinkedList
+
+
+/*
+class LinkedListNode<T> {
+	public T data;
+	public LinkedListNode<T> next;
+
+	public LinkedListNode(T data) {
+		this.setData(data);
+		this.next = null;
+	}
+
+	public T getData() {
+		return data;
+	}
+
+	public void setData(T data) {
+		this.data = data;
+	}
+
+}
+* */
+
+
+public class Solution {
+	public static LinkedListNode<Integer> removeDuplicates(LinkedListNode<Integer> head) {
+          /*  LinkedListNode<Integer> current = new  LinkedListNode<Integer>(null); 
+      current = head;
+        while(current.next != null) 
+       {
+        if (current.data.equals(current.next.data))
+        {
+            current.next = current.next.next;
+        } else 
+        {
+            current = current.next;
+        }
+       }
+        return head;*/
+        LinkedListNode<Integer> ptr;
+        ptr=head;
+        while(ptr!=null && ptr.next!=null)
+        {
+            if(ptr.data.equals(ptr.next.data))
+            {
+              ptr.next=ptr.next.next;  
+            }
+            else
+                ptr=ptr.next;
+        }
+        return head;
+    }
+}
+
